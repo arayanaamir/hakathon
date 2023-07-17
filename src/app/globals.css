@@ -1,27 +1,219 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+ 
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+ 
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+ 
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+ 
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+ 
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+ 
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+ 
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+ 
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --ring: 215 20.2% 65.1%;
+ 
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+ 
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+ 
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+ 
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+ 
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+ 
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+ 
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --ring: 216 34% 17%;
+ 
+    --radius: 0.5rem;
   }
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.newsletter-background {
+  font-weight: 800;
+  font-size: 7.5rem;
+  line-height: 151px;
+  color: #f2f3f7;
+  position: absolute;
+  z-index: -1;
+}
+ 
+/*-------------------- FEATURES SECTION ------------------*/
+.features-section {
+  margin-top: 4rem;
+}
+.features-section .title {
+  display: flex;
+  justify-content: end;
+  padding: 0 8rem 2rem;
+  background: linear-gradient(180deg, white 50%, #FBFCFF 50%);
+}
+.features-section .title h1 {
+  font-weight: 700;
+  font-size: 2.75rem;
+  line-height: 55px;
+  letter-spacing: 0.03em;
+  color: #212121;
+  width: 45%;
+}
+.features-section .content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 8rem 4rem;
+  background-color: #FBFCFF;
+}
+.features-section .content .left {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.features-section .content .left .feature-background {
+  font-weight: 800;
+  font-size: 6.875rem;
+  line-height: 110px;
+  position: absolute;
+  color: #212121;
+  opacity: 0.07;
+  z-index: 1;
+}
+.features-section .content .left div {
+  width: 70%;
+  z-index: 2;
+}
+.features-section .content .left h3 {
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 20px;
+  letter-spacing: 0.03em;
+  color: #212121;
+  margin-bottom: 1rem;
+}
+.features-section .content .left p {
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 22px;
+  letter-spacing: 0.05em;
+  color: #212121;
+}
+.features-section .content .right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+}
+.features-section .content .right div {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.features-section .content .right p {
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 26px;
+  text-align: justify;
+  color: #212121;
+}
+.features-section .btn {
+  font-size: 0.875rem;
+  width: 50%;
+}
+/*-------------------- FOOTER SECTION ------------------*/
+footer {
+  background-color: white;
+}
+.footer {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr; 
+}
+.footer .logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 80%;
+}
+.icon-container {
+  display: flex;
+  gap: 1rem;
+}
+.icon-container div {
+  padding: 10px 12px;
+  background-color: #F1F1F1;
+  border-radius: 10px;
+  cursor: pointer;
+}
+footer li{
+  margin-top: 15px;
+}
+footer li:first-child {
+  margin-top: 25px;
+}
+footer p, footer li {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 22px; 
+  color: #666666;
+}
+.footer-links h3 {
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 19px;
+  letter-spacing: 0.02em;
+  color: #666666;
+}
+.copyright {
+  margin-top: 6rem;
+  border-top: 1px solid #666666;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.copyright p {
+  margin: 1.5rem 8rem;
+}
+.copyright span {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 15px;
+  color: #212121;
 }
